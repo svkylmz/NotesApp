@@ -1,4 +1,4 @@
-package com.svkylmz.notesapp
+package com.svkylmz.notesapp.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
