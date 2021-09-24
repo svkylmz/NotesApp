@@ -33,7 +33,7 @@ fun NoteItem(
 ) {
     Box(modifier = modifier) {
         //Shape of the box
-        Canvas(modifier = modifier.matchParentSize()) {
+        Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
                 lineTo(size.width - cutCornerSize.toPx(), 0f)
                 lineTo(size.width, cutCornerSize.toPx())
@@ -60,7 +60,7 @@ fun NoteItem(
         }
         //Content of the box
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
                 .padding(end = 32.dp)
@@ -72,23 +72,24 @@ fun NoteItem(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
-            Spacer(modifier = modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = note.content,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface,
-                maxLines = 10,
+                maxLines = 5,
                 overflow = TextOverflow.Ellipsis
             )
         }
         //Delete icon of the box
         IconButton(
             onClick = onDeleteClick,
-            modifier = modifier.align(Alignment.BottomEnd)
+            modifier = Modifier.align(Alignment.BottomEnd)
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
-                contentDescription = "Delete note"
+                contentDescription = "Delete note",
+                tint = Color.DarkGray
             )
         }
     }
